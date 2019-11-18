@@ -48,7 +48,7 @@ module.exports = (env) => {
       {
         test:/\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: [
-            path.resolve(__dirname, "./src/static/img/")
+            path.resolve(__dirname, "./src/static/imgs/")
         ],
         use:[{
           loader:'file-loader',
