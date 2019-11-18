@@ -1,0 +1,29 @@
+
+
+.app-nav {
+  .app-nav-list {
+    @extend %d-flex;
+    @extend %f-justify-space-between;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+  }
+  .nav-list-item {
+    a {
+      display: block;
+      text-decoration: none;
+      color:var(--theme-font-color-light);
+    }
+    span {
+      display: inline-block;
+    }
+    .nav-icon {
+      width:1.2rem;
+      height: 1.2rem;
+      background: white;
+    }
+    .nav-text {
+      display: none;
+    }
+  }
+}

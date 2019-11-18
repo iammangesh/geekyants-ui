@@ -1,0 +1,6 @@
+.app-column {
+  height: 100vh;
+  &:first-child {
+    background:var(--theme-gradient);
+  }
+}

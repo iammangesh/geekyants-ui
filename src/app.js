@@ -2,13 +2,12 @@
 import React from 'react';
 import "./sass/style.scss";
 import ReactDOM from 'react-dom';
+import Layout from './components/Layout';
 
 
 class App extends React.Component {
   render(){
-    return(
-      <h1> App rendered </h1>
-    )
+    return(<Layout/>);
   }
 }
 
