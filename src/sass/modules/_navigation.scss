@@ -7,12 +7,25 @@
     list-style-type: none;
     margin:0;
     padding:0;
+
+    @media (min-width: 768px) {
+      display: block;
+
+    }
   }
   .nav-list-item {
+    position: relative;
     a {
       display: block;
       text-decoration: none;
       color:var(--theme-font-color-light);
+
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding:1rem 1.8rem;
+      }
     }
     span {
       display: inline-block;
@@ -21,9 +34,34 @@
       width:1.2rem;
       height: 1.2rem;
       background: white;
+      @media (min-width: 768px) {
+        margin-right:0.6rem;
+      }
     }
     .nav-text {
       display: none;
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+    &.active {
+      background: var(--theme-font-color-white);
+      &:before , &:after {
+        position: absolute;
+        right:0;
+        content:"";
+        width:3.2rem;
+        height:3.2rem;
+        background:url('../imgs/radius.png') no-repeat center;
+        background-size: contain;
+      }
+      &:before {
+        top:-100%;
+      }
+      &:after {
+        bottom:-100%;
+        transform: rotate(-90deg);
+      }
     }
   }
 }

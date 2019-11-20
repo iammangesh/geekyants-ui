@@ -1,5 +1,9 @@
 .app-column {
   height: 100vh;
+  padding:0.8rem;
+  @media (min-width: 768px) {
+    padding:0;
+  }
   &:first-child {
     background:var(--theme-gradient);
   }
