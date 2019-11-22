@@ -46,21 +46,23 @@
     }
     &.active {
       background: var(--theme-font-color-white);
-      &:before , &:after {
-        position: absolute;
-        right:0;
-        content:"";
-        width:3.2rem;
-        height:3.2rem;
-        background:url('../imgs/radius.png') no-repeat center;
-        background-size: contain;
-      }
-      &:before {
-        top:-100%;
-      }
-      &:after {
-        bottom:-100%;
-        transform: rotate(-90deg);
+      @media (min-width: 768px) {
+        &:before , &:after {
+          position: absolute;
+          right:0;
+          content:"";
+          width:3.2rem;
+          height:3.2rem;
+          background:url('../imgs/radius.png') no-repeat center;
+          background-size: contain;
+        }
+        &:before {
+          top:-100%;
+        }
+        &:after {
+          bottom:-100%;
+          transform: rotate(-90deg);
+        }
       }
     }
   }

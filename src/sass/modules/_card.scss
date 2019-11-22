@@ -1,0 +1,36 @@
+.app-card {
+  @extend %card;
+  .card-img {
+    margin-bottom:1rem;
+    img {
+      display: block;
+      width:100%;
+      border-radius: 0.8rem;
+      margin:0 auto;
+    }
+  }
+  .card-content {
+    padding:0.8rem;
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+  .card-meta-data {
+    margin-top:1rem;
+    @extend %d-flex;
+    @extend %f-align-center;
+    span {
+      display: block;
+    }
+    small {
+
+    }
+  }
+}

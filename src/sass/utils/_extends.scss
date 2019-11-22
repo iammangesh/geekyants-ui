@@ -18,3 +18,8 @@
 %f-justify-space-between {
   justify-content: space-between;
 }
+
+%card {
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  border-radius:.8rem;
+}

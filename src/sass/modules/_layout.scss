@@ -8,3 +8,9 @@
     background:var(--theme-gradient);
   }
 }
+
+.app-holder {
+  & > .row:not(#a) {
+    margin:0;
+  }
+}
