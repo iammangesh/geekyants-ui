@@ -4,7 +4,12 @@ import UserWidget from './SubComponents/UserWidget';
 import Branding from './SubComponents/Branding';
 import Dashboard from './TabsContent/Dashboard';
 import Calendar from './TabsContent/Calendar';
+import Books from './TabsContent/Books';
+import Settings from './TabsContent/Settings';
+import Tickets from './TabsContent/Tickets';
+import Contacts from './TabsContent/Contacts';
 
+import { bulletins ,shifts } from './data';
 
 class Layout extends React.Component {
   state = {
@@ -13,32 +18,32 @@ class Layout extends React.Component {
     navItems:[{
       title:'Dashboard',
       icon:'dashboard',
-      component:<Dashboard/>
+      component:<Dashboard bulletins={bulletins} shifts={shifts}/>
     },
     {
       title:'Calendar',
       icon:'calendar',
-      component:<Calendar/>
+      component:<Calendar bulletins={bulletins} shifts={shifts}/>
     },
     {
       title:'Tickets',
       icon:'tickets',
-      component:null
+      component:<Tickets bulletins={bulletins} shifts={shifts}/>
     },
     {
       title:'Contacts',
       icon:'contacts',
-      component:null
+      component:<Contacts bulletins={bulletins} shifts={shifts}/>
     },
     {
       title:'Book',
       icon:'book',
-      component:null
+      component:<Books bulletins={bulletins} shifts={shifts}/>
     },
     {
       title:'Settings',
       icon:'settings',
-      component:null
+      component:<Settings bulletins={bulletins} shifts={shifts}/>
     }]
   }
   switchNavTab = (e,i) => {

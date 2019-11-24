@@ -8,7 +8,7 @@ const WeatherCard = (props) => {
           <a href="#" className="card-tab-item active">New York</a>
         </div>
         <div className="card-content">
-          <div class="card-info">
+          <div className="card-info">
             <h3>27 &#8451;</h3>
             <p>clear</p>
           </div>

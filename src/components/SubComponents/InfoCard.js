@@ -10,7 +10,7 @@ const InfoCard = (props) => {
           <a href="#" className="card-tab-item">Walk</a>
         </div>
         <div className="card-content">
-          <div class="card-info">
+          <div className="card-info">
             <span>Leave by</span>
             <h3>08:34 <span>AM</span></h3>
             <p>Estimated time 11mins</p>

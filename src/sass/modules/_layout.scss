@@ -5,6 +5,9 @@
   }
   &:first-child {
     background:var(--theme-gradient);
+    @extend %d-flex;
+    @extend %f-justify-center;
+    flex-direction: column;
   }
   &:last-child {
     @media (min-width: 1024px) {
