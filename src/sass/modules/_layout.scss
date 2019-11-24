@@ -1,16 +1,43 @@
 .app-column {
-  height: 100vh;
-  padding:0.8rem;
-  @media (min-width: 768px) {
-    padding:0;
+  padding:0;
+  @media (min-width: 1024px) {
+    height: 100vh;
   }
   &:first-child {
     background:var(--theme-gradient);
   }
+  &:last-child {
+    @media (min-width: 1024px) {
+      height:100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .row-custom {
+        margin:0;
+      }
+    }
+  }
 }
 
-.app-holder {
-  & > .row:not(#a) {
-    margin:0;
+
+.app-content {
+  padding: 0 2rem;
+}
+
+.col-left, .col-right {
+  padding:2rem 0;
+  margin:0;
+}
+.col-left {
+  background: #fff;
+  box-shadow:2px 0 1px rgba(0,0,0,0.5);
+}
+.col-right  {
+  padding: 2rem;
+  background: #F8F8FF;
+  .app-content {
+    padding: 0;
+  }
+  .container-custom {
+    padding:0;
   }
 }

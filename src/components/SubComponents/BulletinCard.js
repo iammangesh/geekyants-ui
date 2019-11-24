@@ -1,11 +1,11 @@
 import React from 'react';
-
+import girlDinner from '../../imgs/img-1.jpg';
 const BulletinCard = (props) => {
   return(
     <React.Fragment>
-      <div class="app-card">
+      <div className="app-card">
         <figure className="card-img">
-          <img src="http://placehold.it/300x150" alt="card image"/>
+          <img src={girlDinner} alt="card image"/>
         </figure>
         <article className="card-content">
           <h2 className="card-title">Blue Stone lane now overtakes starbet </h2>

@@ -88,7 +88,9 @@ module.exports = (env) => {
     devtool:isProd ? 'source-map' : 'cheap-module-eval-source-map',
     devServer:{
       contentBase:path.join(__dirname,'/public'),
-      historyApiFallback:true
+      historyApiFallback:true,
+      host:'192.168.120.156',
+      port:8080
     }
   }
 }

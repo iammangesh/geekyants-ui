@@ -1,0 +1,34 @@
+export default {
+  activeNav:0,
+  isNavVisible:false,
+  navItems:[{
+    title:'Dashboard',
+    icon:'dashboard',
+    component:<Dashboard/>
+  },
+  {
+    title:'Calendar',
+    icon:'calendar',
+    component:<Calendar/>
+  },
+  {
+    title:'Tickets',
+    icon:'tickets',
+    component:null
+  },
+  {
+    title:'Contacts',
+    icon:'contacts',
+    component:null
+  },
+  {
+    title:'Book',
+    icon:'book',
+    component:null
+  },
+  {
+    title:'Settings',
+    icon:'settings',
+    component:null
+  }]
+}

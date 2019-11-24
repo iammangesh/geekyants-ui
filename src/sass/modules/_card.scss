@@ -1,5 +1,6 @@
 .app-card {
   @extend %card;
+  border:1px solid rgba(0,0,0,0.1);
   .card-img {
     margin-bottom:1rem;
     img {
@@ -10,7 +11,7 @@
     }
   }
   .card-content {
-    padding:0.8rem;
+    padding:1.2rem;
     .card-title {
       font-size: 1.4rem;
       font-weight: 600;
@@ -18,19 +19,164 @@
       margin-bottom: 0.5rem;
     }
     p {
-      font-size: 1rem;
+      font-size:0.9rem;
       font-weight: 200;
+      line-height: 1.2;
+      color:#9b9b9b;
     }
   }
   .card-meta-data {
-    margin-top:1rem;
+
+    position: relative;
     @extend %d-flex;
     @extend %f-align-center;
+    padding-top:4rem;
     span {
       display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
     }
     small {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color:#acacac;
+    }
+    .card-meta-thumb {
+      margin-right:0.8rem;
+      width:3.125rem;
+      height:3.125rem;
+      &:before {
+        position: absolute;
+        content:"";
+        width:3.125rem;
+        height: 1px;
+        top:2rem;
+        left:0;
+        background:#d1d1d1;
+      }
+      img {
+          border-radius: 50%;
+      }
+    }
+  }
+  &.no-space {
+    box-shadow: none;
+    border-radius:0;
+    background: #fff;
+    &:not(:last-child) {
+      border-bottom:none;
+    }
+    &:first-child {
+      border-radius:0.8rem 0.8rem 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 0.8rem 0.8rem;
+    }
+    .card-meta-data {
+      padding-top: 0;
+    .card-meta-thumb:before {
+        content:none;
+      }
+    }
+    padding:1.2rem;
+    .content {
+      padding:0;
+    }
+    .card-item {
+      min-height:4.925rem;
+      span {
+        display: block;
+      }
+      .card-label {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #acacac;
+        margin-bottom:1rem;
+        font-weight:400;
+      }
+      .card-value {
+        font-weight: 600;
+        &.light {
+          font-weight: 400;
+          color:#4a4a4a;
+          margin-top:0.3rem;
+          font-size:0.8rem;
+        }
+        &.status {
+          padding:0.5rem 1rem;
+          display: inline-block;
+          border-radius: 0.2rem;
+          &.active {
+            background: rgba(60,188,69,0.1);
+            color:#3BB743;
+          }
+          &.waiting {
+            background: rgba(239,160,101,0.1);
+            color:#D8894E;
+          }
+        }
+      }
+      & + .card-item {
+        margin-top:1.8rem;
+      }
+    }
+  }
+}
 
+.app-card.info-card {
+  padding: 1.2rem;
+  background: linear-gradient(120deg,rgba(255,195,202,0.1) 50%,rgba(10,207,255,0.1));
+  .card-tab {
+    @extend %d-flex;
+    .card-tab-item {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color:rgba(0,0,0,0.3);
+      font-weight: 600;
+
+      & + .card-tab-item {
+        margin-left:1rem;
+      }
+      &.active {
+        color:rgba(0,0,0,1);
+        &:before {
+          position: absolute;
+          width:100%;
+          height:2px;
+          content:"";
+          top:-1.2rem;
+          left:0;
+          background:#4A4AB5;
+        }
+      }
+    }
+  }
+  .card-content {
+    padding:0;
+    min-height:15rem;
+    @extend %d-flex;
+    @extend %f-align-center;
+    @extend %f-justify-center;
+
+  }
+  .card-info {
+    span {
+      color:#acacac;
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 3.5rem;
+      margin:0.5rem 0;
+      span {
+        font-size:1rem;
+        color:#000;
+      }
+    }
+    p {
+      display: block;
+      text-align: center;
+      font-size:0.8rem;
     }
   }
 }

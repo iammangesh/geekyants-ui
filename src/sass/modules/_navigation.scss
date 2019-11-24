@@ -2,8 +2,8 @@
 
 .app-nav {
   .app-nav-list {
-    @extend %d-flex;
-    @extend %f-justify-space-between;
+
+    display: block;
     list-style-type: none;
     margin:0;
     padding:0;
@@ -18,14 +18,14 @@
     a {
       display: block;
       text-decoration: none;
-      color:var(--theme-font-color-light);
-
-      @media (min-width: 768px) {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding:1rem 1.8rem;
-      }
+      color:rgba(255,255,255,0.5);
+      transition: all 30ms ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding:1rem 1.8rem;
+      border: none;
+      transition: padding 300ms ease-in-out;
     }
     span {
       display: inline-block;
@@ -33,20 +33,33 @@
     .nav-icon {
       width:1.2rem;
       height: 1.2rem;
-      background: white;
-      @media (min-width: 768px) {
-        margin-right:0.6rem;
+      margin-right:0.6rem;
+      text-align: center;
+      &:before {
+        display: inline-block;
+        font-family: 'GeekyAnts';
+        font-size: 1.2rem;
+        color:rgba(255,255,255,0.5);
+
       }
     }
     .nav-text {
-      display: none;
-      @media (min-width: 768px) {
-        display: inline-block;
-      }
+      display:inline-block;
     }
     &.active {
       background: var(--theme-font-color-white);
-      @media (min-width: 768px) {
+      a {
+        opacity:1;
+        color:#444444;
+        padding-left:2.2rem;
+        .nav-text {
+          font-weight:800;
+        }
+        .nav-icon:before {
+          color:darken(#3940FF,20);
+        }
+      }
+      @media (min-width: 1024px) {
         &:before , &:after {
           position: absolute;
           right:0;
@@ -57,13 +70,67 @@
           background-size: contain;
         }
         &:before {
-          top:-100%;
+          top:0;
+          transform: translateY(-100%);
         }
         &:after {
-          bottom:-100%;
-          transform: rotate(-90deg);
+          bottom:0;
+          transform: translateY(100%) rotate(-90deg);
         }
       }
     }
+    &[data-icon="dashboard"] .nav-icon:before {
+      content:"\e900";
+    }
+    &[data-icon="calendar"] .nav-icon:before {
+      content:"\e90d";
+    }
+    &[data-icon="book"] .nav-icon:before {
+      content:"\e90a";
+    }
+    &[data-icon="settings"] .nav-icon:before {
+      content:"\e909";
+    }
+    &[data-icon="tickets"] .nav-icon:before {
+      content:"\e90c";
+    }
+    &[data-icon="contacts"] .nav-icon:before {
+      content:"\e908";
+    }
+
   }
+}
+
+.app-drawar {
+  position: fixed;
+  width: 75%;
+  height: 100vh;
+  left:0;
+  top:0;
+  padding:1rem 0;
+  background: var(--theme-gradient);
+  z-index: 10;
+  transition: transform 200ms ease-in-out;
+  transform: translateX(-100%);
+  @media (min-width: 1024px) {
+    position: relative;
+    background: transparent;
+    width:auto;
+    height: auto;
+    transform: translateX(0);
+  }
+  &.open {
+    transform: translateX(0);
+  }
+
+}
+
+.drawar-overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(0,0,0,0.4);
+  z-index:9;
 }

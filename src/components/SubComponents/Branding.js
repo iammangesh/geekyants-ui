@@ -5,6 +5,7 @@ const Branding = (props) => {
     <React.Fragment>
       <div className="app-branding">
         <img src="http://placehold.it/50x50" alt="Branding"/>
+        <a onClick={props.toggleMobileNav} href="#"></a>
       </div>
     </React.Fragment>
   )

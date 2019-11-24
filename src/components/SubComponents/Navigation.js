@@ -10,7 +10,7 @@ const Navigation = (props) => {
             navItems != undefined && navItems.map((item,index) => {
               return(
                 <React.Fragment key={index}>
-                <li className={activeItem == index ? "nav-list-item active" : "nav-list-item"} onClick={(e) => {
+                <li className={activeItem == index ? "nav-list-item active" : "nav-list-item"} data-icon={item.icon} onClick={(e) => {
                     switchNav(e,index)
                   }}>
                   <a href="#">
